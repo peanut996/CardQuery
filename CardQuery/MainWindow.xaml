@@ -1,0 +1,27 @@
+﻿<Window x:Class="CardQuery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardQuery"
+        mc:Ignorable="d"
+        Title="CardQuerySystem" Height="450" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid Height="423" VerticalAlignment="Top" Margin="0,0,0,-3" HorizontalAlignment="Right" Width="792">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label1" FontSize="20" Background="LightSkyBlue" Content="CardQuery System " Margin="290,40,299,317" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <Button Click="Fill_Click" Content="FillRecord" HorizontalAlignment="Left" Margin="208,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
+        <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" Margin="331,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
+        <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" Margin="331,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
+        <Button Click="Dorm_Click" Content="DormRecord" HorizontalAlignment="Left" Margin="71,329,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
+        <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" Margin="71,214,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
+        <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
+Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
+        <CheckBox Content="Administrator Mode" HorizontalAlignment="Left" Margin="208,138,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="2"/>
+
+    </Grid>
+
+</Window>
