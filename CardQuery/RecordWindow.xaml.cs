@@ -26,6 +26,7 @@ namespace CardQuery
            
 
         }
+
         public RecordWindow(String str)
         {
             InitializeComponent();
@@ -33,6 +34,13 @@ namespace CardQuery
             label.Content = str;
             Function.GetListBox(this);  //获取listBox控件
             Function.GetComboBox(this); // 获取ComboBox控件
+
+            //检查是否打开高级模式
+            if (Function.IsAdvancedModeOn)
+            {
+                Function.OpenAdvancedMode(this);
+                
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,9 +49,16 @@ namespace CardQuery
             {  //语句较为复杂  再三考虑
                 //String command = "select * from "
                 //Function.GetSQLToGrid()
-                Function.GetSQLToGrid(Function.GetSQCommand(this), this.dataGrid);
+                Function.GetSQLToGrid(Function.GetSQLCommand(this), this);
+                Function.ChangeControlsVisibility(this);
 
             }
+        }
+
+        private void Readme_Click(object sender, RoutedEventArgs e)
+        {
+            String str = "Guest users only provide simple queries. For advanced features, please open advanced mode.";
+            MessageBox.Show(str, "Readme");
         }
     }
 }

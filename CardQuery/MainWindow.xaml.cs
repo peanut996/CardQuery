@@ -24,6 +24,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 //using CardQueryLibrary;
 
 
@@ -87,12 +88,28 @@ namespace CardQuery
         /// <param name="e"></param>
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("HelloWorld");
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            if (Function.AdminLoginStatus)
+            {
+                Function.IsAdvancedModeOn = true;
+
+            }else
+            {
+                checkBox1.IsChecked = false;
+
+            }
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Super_Click(object sender, RoutedEventArgs e)
+        {
+            SuperWindow superWindow = new SuperWindow();
+            superWindow.Show();
         }
     }
 }

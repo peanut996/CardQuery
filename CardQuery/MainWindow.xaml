@@ -18,9 +18,11 @@
         <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" Margin="331,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
         <Button Click="Dorm_Click" Content="DormRecord" HorizontalAlignment="Left" Margin="71,329,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
         <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" Margin="71,214,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
-        <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
+        <DataGrid  AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
 Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
-        <CheckBox Content="Administrator Mode" HorizontalAlignment="Left" Margin="208,138,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="2"/>
+        <CheckBox Name="checkBox1" Content="Advanced Mode" HorizontalAlignment="Left" Margin="208,138,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="2" FontFamily="Segoe UI" FontWeight="Bold"/>
+        <CheckBox Name="checkBox2"  Content="ZH-CN" Grid.Column="2" HorizontalAlignment="Left" Margin="208,108,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI"/>
+        <Button Click="Super_Click" Content="Advanced Query" HorizontalAlignment="Left" Margin="208,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
 
     </Grid>
 
