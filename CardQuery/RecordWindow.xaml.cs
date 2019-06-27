@@ -23,6 +23,7 @@ namespace CardQuery
         public RecordWindow()
         {
             InitializeComponent();
+           
 
         }
         public RecordWindow(String str)
@@ -30,7 +31,8 @@ namespace CardQuery
             InitializeComponent();
             Title = str;
             label.Content = str;
-
+            Function.GetListBox(this);  //获取listBox控件
+            Function.GetComboBox(this); // 获取ComboBox控件
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,6 +41,8 @@ namespace CardQuery
             {  //语句较为复杂  再三考虑
                 //String command = "select * from "
                 //Function.GetSQLToGrid()
+                Function.GetSQLToGrid(Function.GetSQCommand(this), this.dataGrid);
+
             }
         }
     }

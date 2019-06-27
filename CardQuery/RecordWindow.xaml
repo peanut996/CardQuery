@@ -26,15 +26,16 @@ Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Visible" Grid.Ro
                     </TransformGroup>
                 </Border.RenderTransform>
             </Border>
-            <ListBox  Height="24" Canvas.Left="176" Canvas.Top="111" Width="160" SelectionChanged="ListBox_SelectionChanged"/>
+            <ListBox Visibility="Visible" Name ="listBox"  Height="24" Canvas.Left="176" Canvas.Top="109" Width="160" />
             <Label Content="Choose what you want :" Canvas.Left="28" Canvas.Top="109" Width="160"/>
             <Label Content="Then inpout it in here : " Canvas.Left="28" Canvas.Top="182" Width="136"/>
             <TextBox Name="textBox"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="23" Canvas.Left="176" TextWrapping="Wrap" Canvas.Top="185" Width="160"/>
             <Button  Click="Button_Click" Content="Check !" Canvas.Left="176" Canvas.Top="255" Width="160"  Height="19"/>
             <Label HorizontalContentAlignment="Left" VerticalContentAlignment="top" Content="Finally, Click Here  -&gt;" Canvas.Left="28" Canvas.Top="252" Height="30" Width="136"/>
             <Image Name="Ryan1" Visibility="Collapsed" Height="303" Canvas.Left="-88" Source="Ryan.png" Stretch="Fill" Width="329" Canvas.Top="-114"/>
-            
-            <Image Name="Ryan2" Visibility="Collapsed" Height="510" Canvas.Left="458" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-215" Width="529"/>
+
+            <Image Name="Ryan2" Visibility="Collapsed"  Height="510" Canvas.Left="458" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-215" Width="529"/>
+            <ComboBox Visibility="Visible" Name="comboBox"  Canvas.Left="176" Canvas.Top="107" Width="160" Height="26"/>
         </Canvas>
     </Grid>
 </Window>

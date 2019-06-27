@@ -1,4 +1,14 @@
-﻿using System;
+﻿
+/*
+ * 
+ * 2019/06/27 14:09 修改Consum表中SNo字段 请在2017数据库自行修改
+ *    以及LibRecord中  BReCordSNo字段的更新 
+ *    修改LibRecord为LibraryRecord
+ *    实现了ListBox和ComboBox 的动态更新
+ * 
+ * */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,21 +34,24 @@ namespace CardQuery
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            
-        }
+        
+            //Function function = new Function();
+        
+            public MainWindow()
+             { 
+                InitializeComponent();
+            Function function =new Function();
 
-
+             }
 
 
         #region Button_Click
 
-        private void Fill_Click(object sender, RoutedEventArgs e)
+        private void Charge_Click(object sender, RoutedEventArgs e)
         {
-            RecordWindow FillRecord = new RecordWindow("FillRecord");
+            RecordWindow FillRecord = new RecordWindow("ChargeRecord");
             FillRecord.Show();
+            
         }
        
         private void Loss_Click(object sender, RoutedEventArgs e)
@@ -75,6 +88,11 @@ namespace CardQuery
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("HelloWorld");
+        }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
