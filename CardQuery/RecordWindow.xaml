@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardQuery"
         mc:Ignorable="d"
-        Title="RecordWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="RecordWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" WindowStyle="ThreeDBorderWindow">
     <Grid Height="420" VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="209*"/>
         </Grid.RowDefinitions>
         <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="115" HorizontalAlignment="Left" Margin="0,303,0,0" 
-Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Collapsed" Grid.Row="1"/>
+Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Visible" Grid.Row="1"/>
         <Label Name="label"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize=" 23" FontStyle="Normal" Content="Label" HorizontalAlignment="Left" Margin="258,8,0,0" Width="234" FontFamily="Century Gothic" FontWeight="Bold" Height="58" VerticalAlignment="Top" Grid.Row="1"/>
         <Canvas Height="305" VerticalAlignment="Top" Grid.Row="1" Margin="0,0,400,0">
             <TextBlock Canvas.Left="336" TextWrapping="Wrap" Canvas.Top="192"/>
@@ -26,18 +26,18 @@ Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Collapsed" Grid.
                     </TransformGroup>
                 </Border.RenderTransform>
             </Border>
-            <ListBox Visibility="Visible" Name ="listBox"  Height="24" Canvas.Left="176" Canvas.Top="109" Width="160" />
-            <Label Content="Choose what you want :" Canvas.Left="28" Canvas.Top="109" Width="160"/>
+            <ListBox Visibility="Visible" Name ="listBox"  Height="24" Canvas.Left="176" Canvas.Top="94" Width="160" />
+            <Label Content="Choose what you want :" Canvas.Left="28" Canvas.Top="92" Width="160"/>
             <Label Content="Then input it in here : " Canvas.Left="28" Canvas.Top="182" Width="136"/>
-            <TextBox Name="textBox"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="23" Canvas.Left="176" TextWrapping="Wrap" Canvas.Top="185" Width="160"/>
-            <Button  Click="Button_Click" Content="Check !" Canvas.Left="176" Canvas.Top="251" Width="160"  Height="27"/>
-            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="top" Content="Finally, Click Here  -&gt;" Canvas.Left="28" Canvas.Top="252" Height="30" Width="136"/>
-            <Image Name="Image1" Visibility="Collapsed" Height="303" Canvas.Left="-88" Source="Ryan.png" Stretch="Fill" Width="329" Canvas.Top="-114"/>
+            <TextBox Name="textBox"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="23" Canvas.Left="176" TextWrapping="Wrap" Canvas.Top="182" Width="160"/>
+            <Button  Click="Button_Click" Content="Check !" Canvas.Left="176" Canvas.Top="259" Width="160"  Height="27" RenderTransformOrigin="0.512,0.63"/>
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="top" Content="Finally, Click Here  -&gt;" Canvas.Left="28" Canvas.Top="260" Height="30" Width="136"/>
+            <Image Name="Image1" Visibility="Visible" Height="303" Canvas.Left="-88" Source="Ryan.png" Stretch="Fill" Width="329" Canvas.Top="-114"/>
 
-            <Image Name="Image2" Visibility="Collapsed"  Height="510" Canvas.Left="458" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-215" Width="529"/>
-            <ComboBox Visibility="Visible" Name="comboBox"  Canvas.Left="176" Canvas.Top="107" Width="160" Height="26"/>
+            <Image Name="Image2" Visibility="Visible"  Height="510" Canvas.Left="458" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-215" Width="529"/>
+            <ComboBox Visibility="Visible" Name="comboBox"  Canvas.Left="176" Canvas.Top="92" Width="160" Height="26"/>
         </Canvas>
-        <Canvas Name="superCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="221" Margin="350,84,0,0" Grid.Row="1" VerticalAlignment="Top" Width="440">
+        <Canvas Name="superCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="221" Margin="361,84,0,0" Grid.Row="1" VerticalAlignment="Top" Width="429">
             <TextBox Name="superTextBox0" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="10" Width="120" Canvas.Left="83"/>
             <TextBox Name="superTextBox1" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="10" Width="120" Canvas.Left="297"/>
             <TextBox Name="superTextBox2" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="60" Width="120" Canvas.Left="83"/>
@@ -55,6 +55,6 @@ Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Collapsed" Grid.
             <Button Name="superbutton2" Content="Update" Canvas.Left="241" Canvas.Top="177" Width="75"/>
             <Button Name="superbutton3" Content="Delete" Canvas.Left="342" Canvas.Top="177" Width="75"/>
         </Canvas>
-        <Button Name="Readme" Content="Readme" HorizontalAlignment="Left" Margin="519,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156" Height="37" Click="Readme_Click"/>
+        <Button Visibility="Visible" Name="Readme" Content="Readme" HorizontalAlignment="Left" Margin="519,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156" Height="37" Click="Readme_Click"/>
     </Grid>
 </Window>

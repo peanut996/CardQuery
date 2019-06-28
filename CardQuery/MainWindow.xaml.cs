@@ -25,6 +25,7 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
+using System.Threading;
 //using CardQueryLibrary;
 
 
@@ -35,26 +36,34 @@ namespace CardQuery
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-            //Function function = new Function();
-        
-            public MainWindow()
-             { 
-                InitializeComponent();
-                Function function =new Function();
 
-             }
+        //Function function = new Function();
+        #region 构造函数
+        public MainWindow()
+        {
+            InitializeComponent();
+            Function function = new Function();
+            //数据库未连接自动关闭
+            if (!Function.IsConnectSQL)
+            {
+                this.Close();
+
+            }
+
+        }
+
+        #endregion
 
 
-        #region Button_Click
+        #region 各种Button_Click
 
         private void Charge_Click(object sender, RoutedEventArgs e)
         {
             RecordWindow FillRecord = new RecordWindow("ChargeRecord");
             FillRecord.Show();
-            
+
         }
-       
+
         private void Loss_Click(object sender, RoutedEventArgs e)
         {
             RecordWindow LossRecord = new RecordWindow("LossRecord");
@@ -78,29 +87,80 @@ namespace CardQuery
             RecordWindow DormRecord = new RecordWindow("DormRecord");
             DormRecord.Show();
         }
-        #endregion
-
-
-        /// <summary>
-        /// 暂未实现 想法是先创建一个新的Window带有高级权限
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-            MainWindow mainWindow = this;
-            LoginWindow loginWindow = new LoginWindow( mainWindow);
-            loginWindow.Show();
-
-            
-        }
-
 
         private void Super_Click(object sender, RoutedEventArgs e)
         {
             SuperWindow superWindow = new SuperWindow();
             superWindow.Show();
         }
+
+        #endregion
+
+        #region 各种Checkbox
+
+        /// <summary>
+        /// 高级模式开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+            //注意checkBox一旦被点击即为改变状态 
+
+            LoginWindow loginWindow = new LoginWindow();
+
+            ///未选中点击后的操作
+            if (checkBox1.IsChecked == true)
+            {
+                if (loginWindow.ShowDialog() == false)  //检测窗口关闭状态
+                {
+
+                    if (Function.AdminLoginStatus)
+                    {
+                        Function.IsAdvancedModeOn = true;
+                        checkBox1.IsChecked = true;
+
+                    }
+                    else
+                    {
+                        checkBox1.IsChecked = false;
+
+                    }
+                }
+            }
+
+            // 选中后点击的操作
+            if (checkBox1.IsChecked == false)
+            {
+                Function.IsAdvancedModeOn = false;
+                Function.AdminLoginStatus = false;
+            }
+        }
+
+
+        /// <summary>
+        /// 语言设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox2_Checked(object sender, RoutedEventArgs e)
+        {
+            /////未选中点击后的操作
+            //if (checkBox2.IsChecked == true)
+            //{
+
+            //}
+
+            //// 选中后点击的操作
+            //if (checkBox2.IsChecked == true)
+            //{
+
+            //}
+            MessageBox.Show("Coming Soon...","Sorry",MessageBoxButton.OK,MessageBoxImage.Warning);
+            checkBox2.IsChecked = false;
+        }
+
+        #endregion
     }
 }

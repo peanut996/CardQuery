@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardQuery"
         mc:Ignorable="d"
-        Title="CardQuerySystem" Height="450" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="CardQuerySystem" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid Height="423" VerticalAlignment="Top" Margin="0,0,0,-3" HorizontalAlignment="Right" Width="792">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65*"/>
@@ -21,7 +21,7 @@
         <DataGrid  AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
 Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
         <CheckBox Name="checkBox1" Content="Advanced Mode" HorizontalAlignment="Left" Margin="208,138,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="2" FontFamily="Segoe UI" FontWeight="Bold"/>
-        <CheckBox Name="checkBox2"  Content="ZH-CN" Grid.Column="2" HorizontalAlignment="Left" Margin="208,108,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI"/>
+        <CheckBox Name="checkBox2"  Content="ZH-CN" Grid.Column="2" HorizontalAlignment="Left" Margin="208,108,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI" Checked="CheckBox2_Checked"/>
         <Button Click="Super_Click" Content="Advanced Query" HorizontalAlignment="Left" Margin="208,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
 
     </Grid>

@@ -19,12 +19,12 @@ namespace CardQuery
     /// </summary>
     public partial class LoginWindow : Window
     {
-         public MainWindow mainWindow = new MainWindow(); 
+         
 
-        public LoginWindow(MainWindow mainWindow)
+        public LoginWindow()
         {
             InitializeComponent();
-            this.mainWindow = mainWindow;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,7 +38,7 @@ namespace CardQuery
                 {
                     Function.AdminLoginStatus = true;
                     MessageBox.Show("Login Success! ", "Success");
-                    this.Close();
+                    
                 }
                 else
                 {
@@ -50,17 +50,7 @@ namespace CardQuery
             {
                 MessageBox.Show("This Account is no exist.  ");
             }
-            if (Function.AdminLoginStatus)
-            {
-                Function.IsAdvancedModeOn = true;
-                mainWindow. checkBox1.IsChecked = true;
-                this.Show();
-            }
-            else
-            {
-                //checkBox1.IsChecked = false;
 
-            }
 
 
         }

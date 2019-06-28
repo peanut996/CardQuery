@@ -16,18 +16,20 @@ namespace CardQuery
     /// </summary>
     public class Function
     {
-        private bool IsConnectSQL = false;
+        #region Bool型类变量
+        public static bool IsConnectSQL = false;
         public static bool IsAdvancedModeOn = false;
         public static bool AdminLoginStatus = false;
-        
+        #endregion
+
+        #region SQL连接参数
         static String ConStr = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + Environment.CurrentDirectory + "\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
         // Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\bin\Debug\CardQuery.mdf";Integrated Security = True; Connect Timeout = 30
         static SqlConnection  sqlConnect = new SqlConnection(ConStr); //进行数据库连接
 
-        static String[] TableDict = { "ConsumRecord", "ChargeRecord","LossRecord","LibraryRecord","DormRecord" };
-        //表名字典对应下标0 1 2 3 4 
+        #endregion
 
-
+        #region 包含判断SQL连接的构造函数
         /// <summary>
         /// 包含判断SQL是否连接成功的构造函数
         /// </summary>
@@ -46,14 +48,47 @@ namespace CardQuery
                 }
                 if (IsConnectSQL == true)
                 {
-                    MessageBox.Show("SQL Connected Succeed!","Succeed");
+                    MessageBox.Show("SQL Connected Succeed!","Succeed",MessageBoxButton.OK,MessageBoxImage.Information,MessageBoxResult.OK);
                 }
  
             }
             catch
             {
-                MessageBox.Show("SQL Connected Error. ","Connected Failed");
+                MessageBox.Show("SQL Connected Error. ","Connected Failed",MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
+                
             }
+        }
+        #endregion
+
+        #region SQL操作
+
+        /// <summary>
+        /// 通过判断ListBox的值给出对应的查询语句
+        /// </summary>
+        public static String GetSQLCommand(RecordWindow recordWindow) {
+            
+            String[] SNoDict = { "ConsumSNo","ChargeSNo","LossSNo","BRecordSNo","DRecordSNo"};
+            String str  = "select SName, "+ recordWindow.Title+ ".* from Student, " +recordWindow.Title ;  //默认连接学生表
+            //"select SName , [title].* from Student, [title]"
+
+            if (recordWindow.textBox.Text != "")
+            {
+                //"where [Text] = 'text' and Sno = 'Tittle.SNo' and Student,SNo = [Title].SNo"
+                str = str + " where " + recordWindow.comboBox.Text + " = '" + recordWindow.textBox.Text
+                    +"' and Student.SNo = "+recordWindow.Title+"."+SNoDict[JudgeRecordWindow(recordWindow)]; 
+            }
+            else
+            {
+                str = str+ " Where  Student.SNo = "+recordWindow.Title+"."+SNoDict[JudgeRecordWindow(recordWindow)];
+                // "and Student,SNo = [Title].SNo"
+
+            }
+            MessageBox.Show(str,"SQL Sentence");
+            return str;
+        }
+        public static String GetCanvasSQLCommand(RecordWindow recordWindow)
+        {
+            return "";
         }
 
         /// <summary>
@@ -75,11 +110,12 @@ namespace CardQuery
                 MessageBox.Show("SQL Query Failed: "+sqlCommand,"ERROR");
             }
             recordWindow.dataGrid.DataContext = dataSet;
-            recordWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
+            Function.ChangeControlsVisibility(recordWindow);
 
         }
+
         /// <summary>
-        /// 重载GetSQLtoGrid()方法
+        /// 把获取到的数据转到表格 重载+1
         /// </summary>
         /// <param name="sqlCommand"></param>
         /// <param name="superWindow"></param>
@@ -97,7 +133,42 @@ namespace CardQuery
                 MessageBox.Show("SQL statement error: " + sqlCommand, "ERROR");
             }
             superWindow.dataGrid.DataContext = dataSet;
-            superWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
+            Function.ChangeControlsVisibility(superWindow);
+
+        }
+
+        #endregion
+
+        #region 根据表不同产生不同的响应
+
+        static String[] TableDict = { "ConsumRecord", "ChargeRecord","LossRecord","LibraryRecord","DormRecord" };
+        //表名字典对应下标0 1 2 3 4 
+
+        /// <summary>
+        /// 获取recordWindow的类型并返回int
+        /// </summary>
+        /// <param name="recordWindow"></param>
+        /// <returns></returns>
+        public static int JudgeRecordWindow(RecordWindow recordWindow)
+        {
+            int result =666;
+            for(int i = 0; i < TableDict.Length; i++)
+            {
+                if (TableDict[i] == recordWindow.Title)
+                {
+                    result = i;
+                }
+
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 根据不同的表产生不同的CanvasLabelText
+        /// </summary>
+        /// <param name="recordWindow"></param>
+        public static void GetCanvasLabelText(RecordWindow recordWindow)
+        {
 
         }
 
@@ -143,25 +214,8 @@ namespace CardQuery
 
         }
 
+        #endregion
 
-        /// <summary>
-        /// 获取recordWindow的类型并返回int
-        /// </summary>
-        /// <param name="recordWindow"></param>
-        /// <returns></returns>
-        public static int JudgeRecordWindow(RecordWindow recordWindow)
-        {
-            int result =666;
-            for(int i = 0; i < TableDict.Length; i++)
-            {
-                if (TableDict[i] == recordWindow.Title)
-                {
-                    result = i;
-                }
-
-            }
-            return result;
-        }
 
         /// <summary>
         /// 改变控件的可见性
@@ -173,31 +227,16 @@ namespace CardQuery
             recordWindow.Image2.Visibility = System.Windows.Visibility.Visible;
             recordWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
         }
-
         /// <summary>
-        /// 通过判断ListBox的值给出对应的查询语句
+        /// 改变控件的可见性 重载+1
         /// </summary>
-        public static String  GetSQLCommand(RecordWindow recordWindow) {
-            
-            String[] SNoDict = { "ConsumSNo","ChargeSNo","LossSNo","BRecordSNo","DRecordSNo"};
-            String str  = "select SName, "+ recordWindow.Title+ ".* from Student, " +recordWindow.Title ;  //默认连接学生表
-            //"select SName , [title].* from Student, [title]"
+        /// <param name="superWindow"></param>
+        public static void ChangeControlsVisibility(SuperWindow superWindow)
+        {
 
-            if (recordWindow.textBox.Text != "")
-            {
-                //"where [Text] = 'text' and Sno = 'Tittle.SNo' and Student,SNo = [Title].SNo"
-                str = str + " where " + recordWindow.comboBox.Text + " = '" + recordWindow.textBox.Text
-                    +"' and Student.SNo = "+recordWindow.Title+"."+SNoDict[JudgeRecordWindow(recordWindow)]; 
-            }
-            else
-            {
-                str = str+ " Where  Student.SNo = "+recordWindow.Title+"."+SNoDict[JudgeRecordWindow(recordWindow)];
-                // "and Student,SNo = [Title].SNo"
-
-            }
-            MessageBox.Show(str,"SQL Sentence");
-            return str;
+            superWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
         }
+
 
         /// <summary>
         /// 开启高级模式
@@ -205,6 +244,7 @@ namespace CardQuery
         /// <param name="recordWindow"></param>
         public static void OpenAdvancedMode(RecordWindow recordWindow) {
             recordWindow.superCanvas.Visibility = System.Windows.Visibility.Visible;
+            recordWindow.Readme.Visibility = System.Windows.Visibility.Collapsed;
             //考虑赋值
         }
 
