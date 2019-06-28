@@ -12,7 +12,7 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="67*"/>
         </Grid.ColumnDefinitions>
-        <Label  x:Name="label1" FontSize="20" Background="LightSkyBlue" Content="CardQuery System " Margin="290,40,299,317" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label  Visibility="Visible" x:Name="label1" FontSize="20" Background="LightSkyBlue" Content="CardQuery System " Margin="290,40,299,317" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
         <Button Click="Charge_Click" Content="ChargeRecord" HorizontalAlignment="Left" Margin="208,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
         <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" Margin="331,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
         <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" Margin="331,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>

@@ -12,3 +12,6 @@
 以及LibRecord中  BReCordSNo字段的更新 
 修改LibRecord为LibraryRecord
 实现了ListBox和ComboBox 的动态更新
+
+2019/06/28 10:46  修改Admin登陆 需要一个阻塞模块
+

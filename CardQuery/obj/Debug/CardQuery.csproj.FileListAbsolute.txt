@@ -235,3 +235,7 @@ C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\SuperWindow.
 C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\SuperWindow.baml
 C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\LoginWindow.g.cs
 C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\LoginWindow.baml
+D:\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\LoginWindow.g.cs
+D:\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\SuperWindow.g.cs
+D:\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\LoginWindow.baml
+D:\SQl Server\GUI\CardQuery\CardQuery\obj\Debug\SuperWindow.baml

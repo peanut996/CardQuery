@@ -22,7 +22,7 @@ namespace CardQuery
         
         static String ConStr = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + Environment.CurrentDirectory + "\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
         // Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\bin\Debug\CardQuery.mdf";Integrated Security = True; Connect Timeout = 30
-        static SqlConnection  sqlconnect = new SqlConnection(ConStr); //进行数据库连接
+        static SqlConnection  sqlConnect = new SqlConnection(ConStr); //进行数据库连接
 
         static String[] TableDict = { "ConsumRecord", "ChargeRecord","LossRecord","LibraryRecord","DormRecord" };
         //表名字典对应下标0 1 2 3 4 
@@ -35,8 +35,8 @@ namespace CardQuery
         {
             try
             {
-                sqlconnect.Open();
-                if (sqlconnect.State == ConnectionState.Open)  //测试能否连接
+                sqlConnect.Open();
+                if (sqlConnect.State == ConnectionState.Open)  //测试能否连接
                 {
                     IsConnectSQL = true;
                 }
@@ -46,7 +46,7 @@ namespace CardQuery
                 }
                 if (IsConnectSQL == true)
                 {
-                    MessageBox.Show("SQL Link Succeed!","Succeed");
+                    MessageBox.Show("SQL Connected Succeed!","Succeed");
                 }
  
             }
@@ -66,7 +66,7 @@ namespace CardQuery
         {
 
             //SqlCommand sqlcommand = new SqlCommand(commandstr,sqlconnect);//执行数据库操作 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand, sqlconnect);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand, sqlConnect);
             DataSet dataSet = new DataSet();
             dataSet.Clear();
             DataTable dataTable1 = new DataTable();
@@ -87,7 +87,7 @@ namespace CardQuery
         {
 
             //SqlCommand sqlcommand = new SqlCommand(commandstr,sqlconnect);//执行数据库操作 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand, sqlconnect);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand, sqlConnect);
             DataSet dataSet = new DataSet();
             dataSet.Clear();
             DataTable dataTable1 = new DataTable();
@@ -171,8 +171,7 @@ namespace CardQuery
         {
             recordWindow.Image1.Visibility = System.Windows.Visibility.Visible;
             recordWindow.Image2.Visibility = System.Windows.Visibility.Visible;
-             recordWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
-
+            recordWindow.dataGrid.Visibility = System.Windows.Visibility.Visible;//设置控件可见
         }
 
         /// <summary>

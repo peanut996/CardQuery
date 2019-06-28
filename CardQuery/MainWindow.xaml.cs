@@ -41,7 +41,7 @@ namespace CardQuery
             public MainWindow()
              { 
                 InitializeComponent();
-            Function function =new Function();
+                Function function =new Function();
 
              }
 
@@ -88,23 +88,14 @@ namespace CardQuery
         /// <param name="e"></param>
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();
+
+            MainWindow mainWindow = this;
+            LoginWindow loginWindow = new LoginWindow( mainWindow);
             loginWindow.Show();
-            if (Function.AdminLoginStatus)
-            {
-                Function.IsAdvancedModeOn = true;
 
-            }else
-            {
-                checkBox1.IsChecked = false;
-
-            }
-        }
-
-        private void Test_Click(object sender, RoutedEventArgs e)
-        {
             
         }
+
 
         private void Super_Click(object sender, RoutedEventArgs e)
         {
