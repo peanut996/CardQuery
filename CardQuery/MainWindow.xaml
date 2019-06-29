@@ -6,23 +6,142 @@
         xmlns:local="clr-namespace:CardQuery"
         mc:Ignorable="d"
         Title="CardQuerySystem" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
-    <Grid Height="423" VerticalAlignment="Top" Margin="0,0,0,-3" HorizontalAlignment="Right" Width="792">
+    <Grid Height="423" VerticalAlignment="Top" Margin="0,0,0,-3" HorizontalAlignment="Right" Width="792" OpacityMask="#FFC53131">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="67*"/>
         </Grid.ColumnDefinitions>
-        <Label  Visibility="Visible" x:Name="label1" FontSize="20" Background="LightSkyBlue" Content="CardQuery System " Margin="290,40,299,317" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
-        <Button Click="Charge_Click" Content="ChargeRecord" HorizontalAlignment="Left" Margin="208,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
-        <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" Margin="331,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
-        <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" Margin="331,214,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.ColumnSpan="3"/>
-        <Button Click="Dorm_Click" Content="DormRecord" HorizontalAlignment="Left" Margin="71,329,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
-        <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" Margin="71,214,0,0" VerticalAlignment="Top" Width="116" Height="49"/>
-        <DataGrid  AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
-Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
-        <CheckBox Name="checkBox1" Content="Advanced Mode" HorizontalAlignment="Left" Margin="208,138,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="2" FontFamily="Segoe UI" FontWeight="Bold"/>
-        <CheckBox Name="checkBox2"  Content="ZH-CN" Grid.Column="2" HorizontalAlignment="Left" Margin="208,108,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI" Checked="CheckBox2_Checked"/>
-        <Button Click="Super_Click" Content="Advanced Query" HorizontalAlignment="Left" Margin="208,329,0,0" VerticalAlignment="Top" Width="116" Height="49" Grid.Column="2"/>
+        <Label  Visibility="Visible" x:Name="label1" FontSize="28" Content="CardQuerySystem " Margin="235,53.5,0,284.452" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ScrollViewer.CanContentScroll="True" BorderThickness="0" FontFamily="Arial" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" Grid.ColumnSpan="3" Width="290.033">
+            <Label.Background>
+                <ImageBrush/>
+            </Label.Background>
+            <Label.Effect>
+                <BlurEffect Radius="1"/>
+            </Label.Effect>
+        </Label>
+        <DataGrid  AutoGenerateColumns="True" ItemsSource="{Binding table}" Height="144" HorizontalAlignment="Left" Margin="10,119,0,0" 
+x:Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
+        <CheckBox x:Name="checkBox1" Content="Advanced Mode" HorizontalAlignment="Left" Margin="228,174.547,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" FontFamily="Segoe UI" FontWeight="Bold" Grid.Column="2"/>
+        <CheckBox x:Name="checkBox2"  Content="ZH-CN" HorizontalAlignment="Left" Margin="228,137.564,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Segoe UI" Checked="CheckBox2_Checked" Grid.Column="2"/>
+        <UniformGrid Height="315.452" Margin="43.533,186.497,0,-78.949" Cursor="None" Width="486.5" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3" OpacityMask="White">
+            <UniformGrid.Effect>
+                <DropShadowEffect BlurRadius="0" Opacity="0.6" Direction="295" RenderingBias="Quality" ShadowDepth="3"/>
+            </UniformGrid.Effect>
+            <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LossRecord">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LibraryRecord">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="ConsumRecord">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Charge_Click" Content="ChargeRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="ChargeRecord">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Dorm_Click" Content="DormRecord" HorizontalAlignment="Left" Margin="0,0,-9.651,0" VerticalAlignment="Top" Width="116" Height="49" Background="Azure" ToolTip="DormLibrary">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Super_Click" Content="Advanced Query" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="Advanced Query">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </UniformGrid>
+        <Button Click="GitHub_Click" HorizontalAlignment="Left" Height="50" Margin="307.5,311.5,0,0" VerticalAlignment="Top" Width="50" AutomationProperties.Name="peanut996" Grid.Column="2" ToolTip="Github">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+            <Image Source="GitHub-Mark-32px.png" Stretch="Fill" RenderTransformOrigin="1.274,0.614" Height="32" Width="32"/>
+        </Button>
+        <Button Click="Blog_Click" HorizontalAlignment="Left" Height="50" Margin="210,311.5,0,0" VerticalAlignment="Top" Width="50" AutomationProperties.Name="peanut996"  Grid.Column="2" ToolTip="Blog">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+            <Image Source="favicon1.png" Stretch="Fill" Height="32" Width="32"/>
+        </Button>
+        <Label Content="Powered By Onepeanut" Grid.Column="2" HorizontalAlignment="Left" Height="31" Margin="187,374.524,0,0" VerticalAlignment="Top" Width="205" FontFamily="Century Gothic" FontWeight="Bold" FontStyle="Italic" FontSize="16"/>
+
 
     </Grid>
 

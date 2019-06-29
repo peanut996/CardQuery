@@ -109,6 +109,7 @@ namespace CardQuery
             //注意checkBox一旦被点击即为改变状态 
 
             LoginWindow loginWindow = new LoginWindow();
+            Function.AdminLoginStatus = false;
 
             ///未选中点击后的操作
             if (checkBox1.IsChecked == true)
@@ -118,24 +119,21 @@ namespace CardQuery
 
                     if (Function.AdminLoginStatus)
                     {
-                        Function.IsAdvancedModeOn = true;
+                        
                         checkBox1.IsChecked = true;
 
                     }
                     else
                     {
                         checkBox1.IsChecked = false;
+                     
 
                     }
                 }
             }
 
-            // 选中后点击的操作
-            if (checkBox1.IsChecked == false)
-            {
-                Function.IsAdvancedModeOn = false;
-                Function.AdminLoginStatus = false;
-            }
+
+
         }
 
 
@@ -162,5 +160,18 @@ namespace CardQuery
         }
 
         #endregion
+
+
+        private void GitHub_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/peanut996");
+
+        }
+
+        private void Blog_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://onepeanut.me");
+
+        }
     }
 }

@@ -191,5 +191,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GitHub-Mark-32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

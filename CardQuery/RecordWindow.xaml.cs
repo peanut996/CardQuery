@@ -20,11 +20,11 @@ namespace CardQuery
     /// </summary>
     public partial class RecordWindow : Window
     {
+        public int recordWindowInt;
+
         public RecordWindow()
         {
             InitializeComponent();
-           
-
         }
 
         public RecordWindow(String str)
@@ -34,12 +34,15 @@ namespace CardQuery
             label.Content = str;
             Function.GetListBox(this);  //获取listBox控件
             Function.GetComboBox(this); // 获取ComboBox控件
+            recordWindowInt = Function.JudgeRecordWindow(this);
+
 
             //检查是否打开高级模式
-            if (Function.IsAdvancedModeOn)
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            if (mainWindow.checkBox1.IsChecked==true)
             {
                 Function.OpenAdvancedMode(this);
-                
+
             }
         }
 
@@ -60,5 +63,69 @@ namespace CardQuery
             String str = "Guest users only provide simple queries. For advanced features, please open advanced mode.";
             MessageBox.Show(str, "Readme");
         }
+        #region Canvas中的CLick
+        private void Superbutton0_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+                Function.GetSQLToGrid(Function.GetSuperSQLCommand(this, (String)superbutton0.Content), this);
+                
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Get all information Failed! ", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Superbutton1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Function.GetSQLToGrid(Function.GetSuperSQLCommand(this, (String)superbutton1.Content), this);
+                
+
+            }catch
+            {
+                MessageBox.Show("Insert Failed! ", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Superbutton2_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                try
+                {
+                    Function.GetSQLToGrid(Function.GetSuperSQLCommand(this, (String)superbutton2.Content), this);
+                    
+
+
+                }
+                catch
+                {
+                    MessageBox.Show("Update Failed! ", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void Superbutton3_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                
+                Function.GetSQLToGrid(Function.GetSuperSQLCommand(this, (String)superbutton3.Content), this);
+               
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Delete Failed! ", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        #endregion
     }
 }

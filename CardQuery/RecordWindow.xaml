@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardQuery"
         mc:Ignorable="d"
-        Title="RecordWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" WindowStyle="ThreeDBorderWindow">
+        Title="RecordWindow" Height="445" Width="874.5" WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow">
     <Grid Height="420" VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="209*"/>
         </Grid.RowDefinitions>
         <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="115" HorizontalAlignment="Left" Margin="0,303,0,0" 
-Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Visible" Grid.Row="1"/>
+Name="dataGrid" VerticalAlignment="Top" Width="880" Visibility="Visible" Grid.Row="1"/>
         <Label Name="label"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize=" 23" FontStyle="Normal" Content="Label" HorizontalAlignment="Left" Margin="258,8,0,0" Width="234" FontFamily="Century Gothic" FontWeight="Bold" Height="58" VerticalAlignment="Top" Grid.Row="1"/>
         <Canvas Height="305" VerticalAlignment="Top" Grid.Row="1" Margin="0,0,400,0">
             <TextBlock Canvas.Left="336" TextWrapping="Wrap" Canvas.Top="192"/>
-            <Border BorderBrush="Black" BorderThickness="1" Height="1" Canvas.Left="-7" Canvas.Top="75" Width="812" RenderTransformOrigin="0.5,0.5">
+            <Border BorderBrush="Black" BorderThickness="1" Height="1" Canvas.Left="-7" Canvas.Top="75" Width="917" RenderTransformOrigin="0.5,0.5">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>
@@ -32,29 +32,28 @@ Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Visible" Grid.Ro
             <TextBox Name="textBox"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="23" Canvas.Left="176" TextWrapping="Wrap" Canvas.Top="182" Width="160"/>
             <Button  Click="Button_Click" Content="Check !" Canvas.Left="176" Canvas.Top="259" Width="160"  Height="27" RenderTransformOrigin="0.512,0.63"/>
             <Label HorizontalContentAlignment="Left" VerticalContentAlignment="top" Content="Finally, Click Here  -&gt;" Canvas.Left="28" Canvas.Top="260" Height="30" Width="136"/>
-            <Image Name="Image1" Visibility="Visible" Height="303" Canvas.Left="-88" Source="Ryan.png" Stretch="Fill" Width="329" Canvas.Top="-114"/>
-
-            <Image Name="Image2" Visibility="Visible"  Height="510" Canvas.Left="458" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-215" Width="529"/>
+            <Image Name="Image1" Visibility="Visible" Height="275" Canvas.Left="-40" Source="Ryan.png" Stretch="Fill" Width="275" Canvas.Top="-93"/>
+            <Image Name="Image2" Visibility="Visible"  Height="450" Canvas.Left="524" Source="Ryan_2.png" Stretch="Fill" Canvas.Top="-180" Width="450"/>
             <ComboBox Visibility="Visible" Name="comboBox"  Canvas.Left="176" Canvas.Top="92" Width="160" Height="26"/>
         </Canvas>
-        <Canvas Name="superCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="221" Margin="361,84,0,0" Grid.Row="1" VerticalAlignment="Top" Width="429">
-            <TextBox Name="superTextBox0" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="10" Width="120" Canvas.Left="83"/>
-            <TextBox Name="superTextBox1" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="10" Width="120" Canvas.Left="297"/>
-            <TextBox Name="superTextBox2" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="60" Width="120" Canvas.Left="83"/>
-            <TextBox Name="superTextBox3" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="60" Width="120" Canvas.Left="297"/>
-            <TextBox Name="superTextBox4" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="116" Width="120" Canvas.Left="83"/>
-            <TextBox Name="superTextBox5" Height="23" TextWrapping="Wrap" Text="TextBox" Canvas.Top="116" Width="120" Canvas.Left="297"/>
-            <Label Name="superlabel0" Content="Label" Canvas.Left="10" Canvas.Top="8"/>
-            <Label Name="superLabel1" Content="Label" Canvas.Left="241" Canvas.Top="8"/>
-            <Label Name="superLabel2" Content="Label" Canvas.Left="241" Canvas.Top="60"/>
-            <Label Name="superLabel3" Content="Label" Canvas.Left="241" Canvas.Top="116"/>
-            <Label Name="superLabel4" Content="Label" Canvas.Left="10" Canvas.Top="116"/>
-            <Label Name="superLabel5" Content="Label" Canvas.Left="10" Canvas.Top="60"/>
-            <Button Name="superbutton0" Content="GetAll" Canvas.Left="10" Canvas.Top="177" Width="75"/>
-            <Button Name="superbutton1" Content="Insert" Canvas.Left="128" Canvas.Top="177" Width="75"/>
-            <Button Name="superbutton2" Content="Update" Canvas.Left="241" Canvas.Top="177" Width="75"/>
-            <Button Name="superbutton3" Content="Delete" Canvas.Left="342" Canvas.Top="177" Width="75"/>
+        <Canvas Name="superCanvas" Visibility="Collapsed" HorizontalAlignment="Left" Height="221" Margin="347,82,0,0" Grid.Row="1" VerticalAlignment="Top" Width="519">
+            <TextBox Name="superTextBox0" Height="23" TextWrapping="Wrap"  Canvas.Top="10" Width="106" Canvas.Left="135"/>
+            <TextBox Name="superTextBox1" Height="23" TextWrapping="Wrap"  Canvas.Top="8" Width="106" Canvas.Left="370"/>
+            <TextBox Name="superTextBox2" Height="23" TextWrapping="Wrap"  Canvas.Top="62" Width="106" Canvas.Left="135"/>
+            <TextBox Name="superTextBox3" Height="23" TextWrapping="Wrap"  Canvas.Top="60" Width="106" Canvas.Left="370"/>
+            <TextBox Name="superTextBox4" Height="23" TextWrapping="Wrap"  Canvas.Top="116" Width="106" Canvas.Left="135"/>
+            <TextBox Name="superTextBox5" Height="23" TextWrapping="Wrap"  Canvas.Top="116" Width="106" Canvas.Left="370"/>
+            <Label Name="superLabel0" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="6" Canvas.Top="10" Width="114" Height="25" RenderTransformOrigin="0.526,0.353" />
+            <Label Name="superLabel1" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="246" Canvas.Top="6" Width="114"/>
+            <Label Name="superLabel2" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="6" Canvas.Top="62" Width="114"/>
+            <Label Name="superLabel3" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="246" Canvas.Top="60" Width="114"/>
+            <Label Name="superLabel4" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="6" Canvas.Top="116" Width="114"/>
+            <Label Name="superLabel5" Content="Label" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Canvas.Left="241" Canvas.Top="116" Width="119" Height="25"/>
+            <Button Name="superbutton0" Content="GetAll" Canvas.Left="83" Canvas.Top="180" Width="75" Click="Superbutton0_Click"/>
+            <Button Name="superbutton1" Content="Insert" Canvas.Left="184" Canvas.Top="180" Width="75" Click="Superbutton1_Click"/>
+            <Button Name="superbutton2" Content="Update" Canvas.Left="296" Canvas.Top="180" Width="75" Click="Superbutton2_Click"/>
+            <Button Name="superbutton3" Content="Delete" Canvas.Left="401" Canvas.Top="180" Width="75" Click="Superbutton3_Click"/>
         </Canvas>
-        <Button Visibility="Visible" Name="Readme" Content="Readme" HorizontalAlignment="Left" Margin="519,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156" Height="37" Click="Readme_Click"/>
+        <Button Visibility="Collapsed" Name="Readme" Content="Readme" HorizontalAlignment="Left" Margin="591,168,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156" Height="37" Click="Readme_Click"/>
     </Grid>
 </Window>

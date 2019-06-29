@@ -34,15 +34,15 @@ namespace CardQuery
             string password = "849421294";
             if (acconut.Contains(Account.Text))
             {
-                if (Password.Text.Equals(password))
+                if (passWordBox.Password.Equals(password))
                 {
                     Function.AdminLoginStatus = true;
-                    MessageBox.Show("Login Success! ", "Success");
+                    MessageBox.Show("Login Success! ", "Success",MessageBoxButton.OK,MessageBoxImage.Information);
                     
                 }
                 else
                 {
-                    MessageBox.Show("Password is incorrect. ", "Failed");
+                    MessageBox.Show("Password is incorrect. ", "Failed",MessageBoxButton.OK,MessageBoxImage.Stop);
                 }
 
             }
