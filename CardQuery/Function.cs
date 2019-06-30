@@ -22,13 +22,13 @@ namespace CardQuery
         public static bool AdminLoginStatus = false;
         #endregion
 
-        
+
 
         #region SQL连接参数
-        static String ConStr = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + Environment.CurrentDirectory + "\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
-        // Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\84942\Desktop\SQl Server\GUI\CardQuery\CardQuery\bin\Debug\CardQuery.mdf";Integrated Security = True; Connect Timeout = 30
-        static SqlConnection sqlConnect = new SqlConnection(ConStr); //进行数据库连接
-
+        static String ConStr = "";
+        static String ConStr1 = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + Environment.CurrentDirectory + "\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
+        static String ConStr2=  "server=.;database=CardQuery;integrated security = true";
+        static SqlConnection sqlConnect;
         #endregion
 
         #region 表和学号的字典
@@ -42,6 +42,24 @@ namespace CardQuery
         /// </summary>
         public Function()
         {
+            string message = "Connect   to   which   one   you  want ?\n" +
+                "" +
+                "      'Yes'   for   mdf  file.      \n" +
+                "      'No'   for   SQL  Server.";
+
+            MessageBoxResult Chioce = MessageBox.Show(message,"SQL Chioce",MessageBoxButton.YesNoCancel,MessageBoxImage.Question);
+            if (Chioce == MessageBoxResult.Yes)
+            {
+                ConStr = ConStr1;
+            }else if (Chioce == MessageBoxResult.No)
+            {
+                ConStr = ConStr2;
+            }
+            else if (Chioce == MessageBoxResult.Cancel)
+            {
+                return;
+            }
+            sqlConnect = new SqlConnection(ConStr); //进行数据库连接
             try
             {
                 sqlConnect.Open();
