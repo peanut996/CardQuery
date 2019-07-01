@@ -29,7 +29,7 @@ namespace CardQuery
 
         //v1.0.0.2 更新目录文件为D:\\
         //static String ConStr1 = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =" + Environment.CurrentDirectory + "\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
-        static String ConStr1 = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = D:\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 30";
+        static String ConStr1 = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = D:\\CardQuery.mdf; Integrated Security = True; Connect Timeout = 10";
         static String ConStr2=  "server=.;database=CardQuery;integrated security = true";
         static SqlConnection sqlConnect;
         #endregion
