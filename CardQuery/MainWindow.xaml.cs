@@ -43,14 +43,28 @@ namespace CardQuery
         {
             InitializeComponent();
             Function function = new Function();
+            this.Loaded += new RoutedEventHandler(WindowLoaded);
             //数据库未连接自动关闭
+
+
+        }
+
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+
+            if (App.Dic.ContainsKey("InitWindow"))
+            {
+                InitWindow initWindow = App.Dic["InitWindow"] as InitWindow;
+                initWindow.Dispatcher.Invoke((Action)(() => initWindow.Close()));//在initWindow的线程上关闭InitWindow
+       
+            }
             if (!Function.IsConnectSQL)
             {
                 this.Close();
 
             }
-
         }
+
 
         #endregion
 

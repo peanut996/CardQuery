@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\
+C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\
 CardQuery
 none
 false
 DEBUG;TRACE
-D:\SQL Server\GUI\CardQuery\CardQuery\App.xaml
-41651036800
+C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\App.xaml
+5-313917757
 
-9-1260352417
+10812460960
 121654848548
-LoginWindow.xaml;MainWindow.xaml;RecordWindow.xaml;SuperWindow.xaml;
+InitWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RecordWindow.xaml;SuperWindow.xaml;
 
 False
 
