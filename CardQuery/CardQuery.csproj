@@ -16,7 +16,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>D:\SQL Server\Publish\1.0.0.3\</PublishUrl>
+    <PublishUrl>D:\SQL Server\Publish\CardQuery\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,8 +26,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -56,7 +56,7 @@
     <StartupObject>CardQuery.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon1.ico</ApplicationIcon>
+    <ApplicationIcon>tide_logo_128px.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -171,16 +171,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Ryan.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ryan_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="favicon1.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -193,7 +187,10 @@
     <Resource Include="GitHub-Mark-32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favicon1.png" />
+    <Resource Include="tide_logo_128px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tide_logo_128px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("favicon1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tide_logo_128px.png")]
 
 

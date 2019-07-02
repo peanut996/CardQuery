@@ -25,7 +25,7 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Label.Triggers>
-            <Image Height="32" Source="favicon1.png" Stretch="Fill" Width="32" />
+            <Image Height="32" Source="tide_logo_128px.png" Stretch="Fill" Width="32" />
         </Label>
 
     </Grid>

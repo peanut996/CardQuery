@@ -51,3 +51,6 @@ C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\CardQuery.ex
 C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\CardQuery.application
 C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\CardQuery.exe
 C:\Users\84942\Desktop\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\CardQuery.pdb
+D:\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\CardQuery.csprojAssemblyReference.cache
+D:\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\InitWindow.g.cs
+D:\SQL Server\GUI\CardQuery\CardQuery\obj\Debug\InitWindow.baml
