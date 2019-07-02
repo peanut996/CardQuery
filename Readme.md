@@ -9,7 +9,7 @@
 本WPF程序实现了数据库的简单的查、插、删、改，以及拥有普通用户和高级用户的权限区别  
 普通用户：ReadOnly  
 高级用户：Read and Write  
-整体结构分为`MainWindow`、`RecordWindow`、`Superwindow`三个继承`Window`类
+整体结构分为`MainWindow`、`RecordWindow`、`Superwindow`、`InitWindow`四个继承`Window`类
 在`RecordWindow`上实现不同的转型  
 中文开关没有实现，影响参数传递，工作量较大
 
