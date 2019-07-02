@@ -41,7 +41,7 @@ namespace CardQuery
         static SqlConnection sqlConnect;
         static MessageBoxResult Chioce;
         static string message = "Connect   to   which   one   you  want ?\n" +
-                                 "" + "      'Yes'   for   Remote  Server.      \n" + "      'No'   for   SQL  Server.";
+                                 "" + "      'Yes'   For   Remote  SQL  Server.      \n" + "      'No'   For  Local  SQL  Server.";
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace CardQuery
             }
             else
             {
-                message = "Do  you  want  to  connect  to  local  SQL Server?";
+                message = "Do  you  want  to  connect  to  Local  SQL Server?";
                 Chioce = MessageBox.Show(message, "SQL Chioce", MessageBoxButton.OKCancel, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                 if (Chioce == MessageBoxResult.OK)
                 {
@@ -122,7 +122,15 @@ namespace CardQuery
             bool pingResult = false;
             Ping pingSender = new Ping();
             //注意延迟时间
-            PingReply pingReply = pingSender.Send(iPAddress, 3000);
+            PingReply pingReply = pingSender.Send(iPAddress, 1000);
+            for (int i = 0; i < 4; i++)
+            {
+                if (pingReply.Status == IPStatus.Success)
+                {
+                    break;
+                }
+                pingReply = pingSender.Send(iPAddress, 1000);
+            }
             if (pingReply.Status != IPStatus.Success)
             {
                 //CloseInitWindow();
@@ -164,7 +172,7 @@ namespace CardQuery
                 // "and Student,SNo = [Title].SNo"
 
             }
-            MessageBox.Show(sqlCommand, "SQL Sentence");
+            //MessageBox.Show(sqlCommand, "SQL Sentence");
             return sqlCommand;
         }
         public static String GetSuperSQLCommand(RecordWindow recordWindow, String buttonCommand)
@@ -225,7 +233,7 @@ namespace CardQuery
                 default:
                     break;
             }
-            MessageBox.Show(sqlCommand, "SQL Sentence");
+            //MessageBox.Show(sqlCommand, "SQL Sentence");
             return sqlCommand;
         }
 

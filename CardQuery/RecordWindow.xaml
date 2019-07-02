@@ -11,8 +11,8 @@
             <RowDefinition/>
             <RowDefinition Height="209*"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="115" HorizontalAlignment="Left" Margin="0,303,0,0" 
-Name="dataGrid" VerticalAlignment="Top" Width="880" Visibility="Visible" Grid.Row="1"/>
+        <DataGrid   AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="115" HorizontalAlignment="Left" Margin="0,303,0,0" 
+Name="dataGrid" VerticalAlignment="Top" Width="880" Visibility="Collapsed" Grid.Row="1"/>
         <Label Name="label"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize=" 23" FontStyle="Normal" Content="Label" HorizontalAlignment="Left" Margin="258,8,0,0" Width="234" FontFamily="Century Gothic" FontWeight="Bold" Height="58" VerticalAlignment="Top" Grid.Row="1"/>
         <Canvas Height="305" VerticalAlignment="Top" Grid.Row="1" Margin="0,0,400,0">
             <TextBlock Canvas.Left="336" TextWrapping="Wrap" Canvas.Top="192"/>

@@ -73,8 +73,8 @@ namespace CardQuery
 
         private void Charge_Click(object sender, RoutedEventArgs e)
         {
-            RecordWindow FillRecord = new RecordWindow("ChargeRecord");
-            FillRecord.Show();
+            RecordWindow ChargeRecord = new RecordWindow("ChargeRecord");
+            ChargeRecord.Show();
 
         }
 

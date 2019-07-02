@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardQuery"
         mc:Ignorable="d"
-        Title="Waiting " Height="180" Width="320" WindowStartupLocation="CenterOwner">
+        Title="Waiting " Height="180" Width="320" WindowStartupLocation="Manual" >
     <Grid>
-        <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="Initializing..." VerticalAlignment="Top" Height="66" FontSize="24" FontFamily="Century Gothic" FontWeight="Bold" Margin="107,46,45,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Content="Initializing..." VerticalAlignment="Top" Height="66" FontSize="24" FontFamily="Century Gothic" FontWeight="Bold" Margin="107,46,45,0" Grid.ColumnSpan="4"/>
         <Label Background="Transparent"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                              RenderTransformOrigin="0.5,0.5" Margin="65,56,195,37">
+                              RenderTransformOrigin="0.5,0.5" Margin="65,56,24,37">
             <Label.RenderTransform>
                 <TransformGroup  >
                     <RotateTransform  Angle="0"/>

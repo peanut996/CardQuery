@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Advanced Query" Height="450" Width="800">
     <Grid>
-        <DataGrid AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="104" HorizontalAlignment="Left" Margin="0,314,0,0" 
-Name="dataGrid" VerticalAlignment="Top" Width="792" Visibility="Visible"/>
+        <DataGrid Visibility="Collapsed" AutoGenerateColumns="True" ItemsSource="{Binding Path=table}" Height="104" HorizontalAlignment="Left" Margin="0,314,0,0" 
+Name="dataGrid" VerticalAlignment="Top" Width="792"/>
         <Canvas Height="419" VerticalAlignment="Top" HorizontalAlignment="Right" Width="792">
             <Label x:Name="label"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize=" 23" FontStyle="Normal" Content="Advanced Query" HorizontalAlignment="Left" Width="234" FontFamily="Century Gothic" FontWeight="Bold" Height="58" VerticalAlignment="Top" Canvas.Left="259" Canvas.Top="23"/>
             <TextBox x:Name="textBox" Text="Please enter SQL sentence here and click the excute button. " HorizontalAlignment="Left" Height="115" TextWrapping="Wrap" VerticalAlignment="Top" Width="425" FontFamily="Corbel" FontStyle="Italic" FontSize="14" TextDecorations="{x:Null}" Canvas.Left="186" Canvas.Top="127"/>

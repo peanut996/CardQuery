@@ -31,38 +31,6 @@ x:Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
             <UniformGrid.Effect>
                 <DropShadowEffect BlurRadius="0" Opacity="0.6" Direction="295" RenderingBias="Quality" ShadowDepth="3"/>
             </UniformGrid.Effect>
-            <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LossRecord">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="White" Offset="0.0" />
-                                    <GradientStop Color="Silver" Offset="0.5" />
-                                    <GradientStop Color="White" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LibraryRecord">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="White" Offset="0.0" />
-                                    <GradientStop Color="Silver" Offset="0.5" />
-                                    <GradientStop Color="White" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
             <Button Click="Consum_Click" Content="ConsumRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="ConsumRecord">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -96,6 +64,38 @@ x:Name="dataGrid" VerticalAlignment="Top" Width="225" Visibility="Hidden"/>
                 </Button.Template>
             </Button>
             <Button Click="Dorm_Click" Content="DormRecord" HorizontalAlignment="Left" Margin="0,0,-9.651,0" VerticalAlignment="Top" Width="116" Height="49" Background="Azure" ToolTip="DormLibrary">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Library_Click" Content="LibraryRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LibraryRecord">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Click="Loss_Click" Content="LossRecord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="49" ToolTip="LossRecord">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20,20,20,20" x:Name="PART_Background">

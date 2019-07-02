@@ -32,9 +32,9 @@ namespace CardQuery
             InitializeComponent();
             Title = str;
             label.Content = str;
+            recordWindowInt = Function.JudgeRecordWindow(this);
             Function.GetListBox(this);  //获取listBox控件
             Function.GetComboBox(this); // 获取ComboBox控件
-            recordWindowInt = Function.JudgeRecordWindow(this);
 
 
             //检查是否打开高级模式

@@ -34,6 +34,7 @@ namespace CardQuery
         private void Excute_Click(object sender, RoutedEventArgs e)
         {
             Function.GetSQLToGrid(textBox.Text,this);
+            Function.ChangeControlsVisibility(this);
         }
     }
 }

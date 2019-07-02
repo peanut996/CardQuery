@@ -38,6 +38,7 @@ namespace CardQuery
                 {
                     Function.AdminLoginStatus = true;
                     MessageBox.Show("Login Success! ", "Success",MessageBoxButton.OK,MessageBoxImage.Information);
+                    this.Close(); 
                     
                 }
                 else

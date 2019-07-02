@@ -12,9 +12,7 @@
         <TextBox Name="Password" Visibility="Collapsed" HorizontalAlignment="Left" Height="23" Margin="202,119,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
         <Label  VerticalContentAlignment="Bottom" Content="Password:" HorizontalAlignment="Left" Margin="90,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.425,1.951"/>
         <Label   VerticalContentAlignment="Bottom" Content="Accounut:" HorizontalAlignment="Left" Margin="89,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.425,1.951"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="68" Margin="90,69,0,0"/>
         <Label x:Name="label"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize=" 23" FontStyle="Normal" Content="Admin Login" HorizontalAlignment="Left" Margin="70,0,0,0" Width="234" FontFamily="Century Gothic" FontWeight="Bold" Height="58" VerticalAlignment="Top"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="68" Margin="90,117,0,0"/>
         <PasswordBox Name="passWordBox"  HorizontalAlignment="Left" Margin="202,119,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
 
     </Grid>
