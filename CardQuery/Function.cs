@@ -112,7 +112,7 @@ namespace CardQuery
 
 
         }
-
+        #endregion
 
 
 
@@ -446,4 +446,3 @@ namespace CardQuery
 
     }
 }
-#endregion
