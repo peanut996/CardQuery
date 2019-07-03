@@ -2,8 +2,8 @@
 
 ##  实现  
 +  C# WPF
-+  SQL Server Express  2012 
-+  Visual Studio 2017 及其组件(SQL Server 2016 local DB, Blend For Visual Studio 2017)  
++  SQL Server Express 2017 For Linux 
++  Visual Studio 2017 及其组件
 
 ## 简述
 本WPF程序实现了数据库的简单的查、插、删、改，以及拥有普通用户和高级用户的权限区别  
