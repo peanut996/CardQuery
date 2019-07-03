@@ -1,4 +1,4 @@
-# CardQuery 校园一卡通记录查询系统
+# CardQuery 校园一卡通管理系统
 
 ##  实现  
 +  C# WPF
